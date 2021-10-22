@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "autoboard-329721",
+  "private_key_id": "3464793b915bdfe87caec348292539e0bd8b43c7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCWFl+MvV9JRq/6\nEQDqQoCEBuSZTJWCamphbZNKYGwmTBP7DDeww1rwFIPtG8s84jBkdp6Y7ff0bnA+\n6K0LqVVhYrMMbjIu6viJ61/44lYhAfnoqqtd6D003KNPSjfACjSgPOgQ0KwRTZeK\n6zq2hxSzN5cc0pOAkgxwDkvaU95etiv7C63+ZczSbBiTJYoWWh93AI0hEhh1pT9j\nyN3I4dXoFP7JIoKOEIX7JQdqp8kj0IHx+x6Mm7SHUnerNOTEGpUVJYUVUelY0wep\nuWa4YlGr16PB76wcQlLfC3fAV240b1aYeFGcNYTdpxK5R4scJJMMOPN2qP8EBz1S\nr1VGdmN9AgMBAAECgf9qT260QhnnItWDoTJaEhZLbpZ9/8E8n3lliY11zCwkSb8y\nvsoJFayptzO7ap811lcbfOovaQrkGKtpOWau2+2eYvXF2EheSLxuSksF//cCFQ7v\nv0mjOt11PtPEAM4nORNjF8FJfTBkZpGb1QMW8e0NBP4Ewc5j7mTg+pTAEVLHF9eK\nnIIf1e9R60LrC9Tz761KryOVtDksafNXHV76OaX++kRCVsfv30m/1+w1MjVQXUks\njHN7GyyLmENXmjolZjwCMGQYntyYDiL3eFuZkf7vKvL3At6/LLGRgWLjxeIYQAlc\nFhUjawD/3O0B177o2M5FgbK97rpMAmWU7JOi/AECgYEAytPLyr7szEQ7oBoUtakX\nKOfxIp4DIjZxaBm+iyS9TVMDpe0+2COrjiof8aLcQT+224tGhq2RcKJxmwT67zBl\niML8/R6J5zGm2cu8k63XreBWKtOA8kQhGxioR8HhJ2aRS7knCByya0yZ2Ox+80uZ\n58euA7U8bIDDVKF12b9wP0kCgYEAvW8UhflXCUbdxHewtk94qYf2Vl4ahuPzMf0+\nBkaYWxfy29GfX6xLtYbzqmn68YYdgljSTIkTsZAHQAhMcxvDkdzaymKHmOiznk6K\n9Fqkn1FkdeuqQMYvLzJXfJzTTZREcgLoqabOMXKmvjfvDzkd5PuhkUl5jmyT3uqn\nYGH/HpUCgYBXzQuBPtkfK8Jr8h5Y7VO7P3yhManFm6/IEqzrawIPgQopP+ReiEJx\njka5wXh7PmuX6lijYGt/SLLJGoTOGjM52r7Ni/TCgjnqOknt2+lruZtTeq9tMJTs\nN+ZQ+drPxZTMJOCCoHmT/Vr0Dpx+EZIURdpMfJ4lki/8aNCtbDPZEQKBgGhNojpG\nWPMFrxP/ZzBqv6Bw+WUCuY5uMrjinGUuN7Nok1MPr7YpEyKnZMD/S6ny04qyx1BW\n5Z4OFL/gEeALeHp25Y0sBUdfUY8n5gC3bA9A7JS1JvA1b0OIb31wiDQeIDW6fkrz\nSnMVktQHzjxOkbREDOkHUMPn6t+BypkaPDOlAoGBAMOY+4HxsRhjfmxxIYWoLF/h\nXKQyOvRAmHTkkzk128pfAS6HFgipgLTEcVkZKRWMMq8qF8KBnISBrWZ09hDlD1LR\nV54ikk0ciGNLBOj7j5InN1n7t4+W35l/LDlPCPG13L8eV8VpGN7W/oCxnKTmXklh\n2SMVCY0PfZav4jP9JBSp\n-----END PRIVATE KEY-----\n",
+  "client_email": "autoboard@autoboard-329721.iam.gserviceaccount.com",
+  "client_id": "114981859486647197522",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/autoboard%40autoboard-329721.iam.gserviceaccount.com"
+}
