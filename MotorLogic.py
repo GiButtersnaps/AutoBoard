@@ -4,19 +4,34 @@ import board
 from adafruit_motorkit import MotorKit   # this is to call stepper motors
 from adafruit_motor import stepper       # this is to use direction and style stepper commands. 
 
-steps_to_distance_checkers = 5   # temporary until we find out
-steps_to_distance_ladders = 6    # temporary until we find out 
+
+#If deans work is correct distance(m) = 1(rev)/.005*pi * 200(steps)/1(rev)
+#therefor 16in for playable area is 5174.45 steps. lets say 5175 steps. 
+#So for coding purpuses we have a 5175,5175 step playable area. These will be our coordinates.
+# we will then go ahead and figure out what space on the board refer to wait coordinate
+#For example, black e4 to g5. e4 will be coords #, # and g5 will be coords #,# and then you can preform all functions below. 
+
+
+
 
 kit = MotorKit()
 #stepper 1 will be the two stpper motors on y axis
 #stepper 2 will be the one stepper motor on x axis
 
-#test 1 move stepper 100 steps.    
-# for i in range(100):
-#     kit.stepper1.onestep()
-#     time.sleep(0.01)
 
-
+def commandcheck(start, end):
+    leftbottombound =0
+    righttopbound = 5175    
+    if start[0] < leftbottombound and start[0] > righttopbound:
+        return False
+    elif start[1] < leftbottombound and start[1] > righttopbound:
+        return False
+    elif end[0] < leftbottombound and end[0] > righttopbound:
+        return False
+    elif end[1] < leftbottombound and end[1] > righttopbound:
+        return False
+    else:
+        return True
 
 # idk if this should be a function or in the main while loop. 
 #assume start, end, current are 2 elements one for x and another y
@@ -56,6 +71,7 @@ def StrightLine(start, end, current):
                 kit.stepper2.onestep(direction=stepper.BACKWARD)
             if diffy1 < 0:
                 kit.stepper2.onestep()
+        time.sleep(0.01)
     # we have reached our start location 
     electromagnet = high                                             # idk what the command will be
     # turn on electromagnet
