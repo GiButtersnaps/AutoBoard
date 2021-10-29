@@ -1,3 +1,14 @@
 {
-    "ros.distro": "noetic"
+    "ros.distro": "noetic",
+    "python.languageServer": "Pylance",
+    "python.linting.pylintEnabled": false,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.analysis.extraPaths": [
+        "",
+        "/Users/rafalczech/.vscode/extensions/joedevivo.vscode-circuitpython-0.1.15/stubs",
+        "/Users/rafalczech/Library/Application Support/Code/User/globalStorage/joedevivo.vscode-circuitpython/bundle/20211029/adafruit-circuitpython-bundle-py-20211029/lib"
+    ],
+    "circuitpython.board.version": null
 }
