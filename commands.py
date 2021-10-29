@@ -1,5 +1,8 @@
-commands = [ "move piece at location to location", "undo that move", "start the game"
+commands = [ "move piece at location to location", "undo move", "start game", "spin the wheel", "move piece 5 spots forwared", "move piece 5 spots forward"
+
 ]
+
+
 
 commandDictionary  = {}
 
@@ -17,11 +20,10 @@ def makeDictionary(commands):
 # runs through the returned message and removes all words that arnt used for any of the valid commands for that game
 def parseCommand(voiceMessage):
     words = voiceMessage.split()
-    validWords = ""
+    validWords = []
     for word in words:
         if word in commandDictionary:
-            validWords += word
-            validWords += " "
+            validWords.append(word) 
     return validWords
 
 
