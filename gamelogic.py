@@ -1,21 +1,50 @@
 
-checkers_mappings = {
-    'A1' : (0, 0), 'B1' : (969,323), 'C1' : (1615,323), 'D1' : (2261,323), 'E1' : (2907, 323), 'F1' : (3553, 323), 'G1' : (4199, 323), 'H1' : (4845,323), 
-    'A2' : (0, 1), 'B2' : (969,969), 'C2' : (1615,969), 'D2' : (2261,969), 'E2' : (2907, 969), 'F2' : (3553, 969), 'G2' : (4199, 969), 'H2' : (4845,969),
-    'A3' : (0, 2), 'B3' : (969,1615), 'C3' : (1615,1615), 'D3' : (2261,1615), 'E3' : (2907, 1615), 'F3' : (3553, 1615), 'G3' : (4199, 1615), 'H3' : (4845,1615),
-    'A4' : (0, 3), 'B4' : (969,2261), 'C4' : (1615,2261), 'D4' : (2261,2261), 'E4' : (2907, 2261), 'F4' : (3553, 2261), 'G4' : (4199, 2261), 'H4' : (4845,2261),
-    'A5' : (0, 4), 'B5' : (969,2907), 'C5' : (1615,2907), 'D5' : (2261,2907), 'E5' : (2907, 2907), 'F5' : (3553, 2907), 'G5' : (4199, 2907), 'H5' : (4845,2907),
-    'A6' : (0, 5), 'B6' : (969,3553), 'C6' : (1615,3553), 'D6' : (2261,3553), 'E6' : (2907, 3553), 'F6' : (3553, 3553), 'G6' : (4199, 3553), 'H6' : (4845,3553),
-    'A7' : (0, 6), 'B7' : (969,4199), 'C7' : (1615,4199), 'D7' : (2261,4199), 'E7' : (2907, 4199), 'F7' : (3553, 4199), 'G7' : (4199, 4199), 'H7' : (4845,4199),
-    'A8' : (0, 7), 'B8' : (969,4845), 'C8' : (1615,4845), 'D8' : (2261,4845), 'E8' : (2907, 4845), 'F8' : (3553, 4845), 'G8' : (4199, 4845), 'H8' : (4845,4845)
+from MotorLogic import StrightLine
+
+
+checkers_mappings_game = {
+    'A1' : (0, 0), 'B1' : (1,0), 'C1' : (2,0), 'D1' : (3,0), 'E1' : (4, 0), 'F1' : (5, 0), 'G1' : (6, 0), 'H1' : (7,0), 
+    'A2' : (0, 1), 'B2' : (1,1), 'C2' : (2,1), 'D2' : (3,1), 'E2' : (4, 1), 'F2' : (5, 1), 'G2' : (6, 1), 'H2' : (7,1),
+    'A3' : (0, 2), 'B3' : (1,2), 'C3' : (2,2), 'D3' : (3,2), 'E3' : (4, 2), 'F3' : (5, 2), 'G3' : (6, 2), 'H3' : (7,2),
+    'A4' : (0, 3), 'B4' : (1,3), 'C4' : (2,3), 'D4' : (3,3), 'E4' : (4, 3), 'F4' : (5, 3), 'G4' : (6, 3), 'H4' : (7,3),
+    'A5' : (0, 4), 'B5' : (1,4), 'C5' : (2,4), 'D5' : (3,4), 'E5' : (4, 4), 'F5' : (5, 4), 'G5' : (6, 4), 'H5' : (7,4),
+    'A6' : (0, 5), 'B6' : (1,5), 'C6' : (2,5), 'D6' : (3,5), 'E6' : (4, 5), 'F6' : (5, 5), 'G6' : (6, 5), 'H6' : (7,5),
+    'A7' : (0, 6), 'B7' : (1,6), 'C7' : (2,6), 'D7' : (3,6), 'E7' : (4, 6), 'F7' : (5, 6), 'G7' : (6, 6), 'H7' : (7,6),
+    'A8' : (0, 7), 'B8' : (1,7), 'C8' : (2,7), 'D8' : (3,7), 'E8' : (4, 7), 'F8' : (5, 7), 'G8' : (6, 7), 'H8' : (7,7)
 }
 
-boardlayout = [[' ', 'x', ' ', 'x', ' ', 'x', ' ', 'x'],['x',' ', 'x', ' ', 'x', ' ', 'x', ' '],[' ', 'x', ' ', 'x', ' ', 'x', ' ', 'x'],[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],['o',' ', 'o', ' ', 'o', ' ', 'o', ' '],[' ', 'o', ' ', 'o', ' ', 'o', ' ', 'o'],['o',' ', 'o', ' ', 'o', ' ', 'o', ' ']]
+boardlayout = [[' ', 'x', ' ', 'x', ' ', 'x', ' ', 'x'],
+                ['x',' ', 'x', ' ', 'x', ' ', 'x', ' '],
+                [' ', 'x', ' ', 'x', ' ', 'x', ' ', 'x'],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                ['o',' ', 'o', ' ', 'o', ' ', 'o', ' '],
+                [' ', 'o', ' ', 'o', ' ', 'o', ' ', 'o'],
+                ['o',' ', 'o', ' ', 'o', ' ', 'o', ' ']]
 
 previousmove = []
 
 magnet_location = "A1"
 
+
+
+def findInbetween(start, end):
+    #check forward x axis
+    if (end[0] - start[0]) ==2:
+        # if forward y axis
+        if (end[1]- start[1]) == 2:
+            return (start[0] + 1, start[1] +1)
+        #if backward y axis
+        elif (end[1]- start[1]) == -2:
+            return (start[0] + 1, start[1] -1)
+    #check backward x axis
+    if (end[0] - start[0]) == -2:
+        #if backward y axis
+        if (end[1]- start[1]) == -2:
+            return (start[0] - 1, start[1] -1)
+        #if forward y axis
+        elif (end[1]- start[1]) == 2:
+            return (start[0] - 1, start[1] +1)
 
 
 # get piece color
@@ -32,24 +61,49 @@ magnet_location = "A1"
 
 def changeBoard(move):
     if move[0] == "move":
+        #get piece color
         if move[1] == "black":
             color = 0
         else:
             color = 1
-        if move[2] not in checkers_mappings:
+        #get start location
+        if move[2] not in checkers_mappings_game:
             return "invalid command"
-        start = checkers_mappings(move[2])
+        start = checkers_mappings_game(move[2])
+        #get end location
+        if move[4] not in checkers_mappings_game:
+            return "invalid command"
+        else:
+            end = checkers_mappings_game(move[4])
+        #if single space jump
+        if (end[0] - start[0]) == 1 or (end[0] - start[0]) == -1:
+            if (end[1] - start[1]) == 1 or (end[1] - start[1]) == -1:
+                #if spot is empty
+                if boardlayout[end[0]][end[1]] == ' ':
+                    #make move, update current location, update board 
+                    StrightLine(checkers_mapping(move[2]), checkers_mapping(move[4]), checkers_mapping(magnet_location ))
+                    magnet_location = end
+                    boardlayout[start[0]][start[1]] = ' '
+                    if color == 0:
+                        boardlayout[end[0]][end[1]] = 'o'
+                    else:
+                        boardlayout[end[0]][end[1]] = 'x'
+            else:
+                return "invalid command"
+        # if double jump 
+        elif (end[0] - start[0]) == 2 or (end[0] - start[0]) == -2:
+            if (end[1] - start[1]) == 2 or (end[1] - start[1]) == -2:
+                if boardlayout[end[0]][end[1]] == ' ':
+                     where = findInbetween(start, end)
 
 
         
-
-
-        
-
     elif move[0] == "start":
         
     elif move[0] == "undo":
         
+
+
     elif move[0] == "spin":
         if move[1] == "the":
             if move[2] == "wheel":

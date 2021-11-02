@@ -1,4 +1,4 @@
-commands = [ "move piece at location to location", "undo move", "start game", "spin the wheel", "move piece 5 spots forwared", "move piece 5 spots forward"
+commands = [ "move piece location to location", "undo move", "start game", "spin the wheel", "move piece 5 spots forwared", "move piece 5 spots forward"
 
 ]
 
