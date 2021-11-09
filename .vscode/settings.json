@@ -6,8 +6,8 @@
     },
     "python.analysis.extraPaths": [
         "",
-        "c:\\Users\\Kevin\\.vscode\\extensions\\joedevivo.vscode-circuitpython-0.1.15\\stubs",
-        "c:\\Users\\Kevin\\AppData\\Roaming\\Code\\User\\globalStorage\\joedevivo.vscode-circuitpython\\bundle\\20211101\\adafruit-circuitpython-bundle-py-20211101\\lib"
+        "/Users/rafalczech/.vscode/extensions/joedevivo.vscode-circuitpython-0.1.15/stubs",
+        "/Users/rafalczech/Library/Application Support/Code/User/globalStorage/joedevivo.vscode-circuitpython/bundle/20211104/adafruit-circuitpython-bundle-py-20211104/lib"
     ],
     "circuitpython.board.version": null
 }
