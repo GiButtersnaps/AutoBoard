@@ -34,7 +34,6 @@ def testmotor( steps):
     print("testing motor")
     for i in range(steps):
         print(i)
-# #         kit.stepper1.onestep()
         stp.value = False
         time.sleep(0.01)
         stp.value = True
@@ -43,12 +42,6 @@ def testmotor( steps):
         time.sleep(0.01) 
  
     print("done") 
-#    
-#time.sleep(10)
-#print(EN.value)
-# kit = MotorKit(i2c)
-
-# testmotor(kit)
 
 testmotor(250) 
 EN.value = True
