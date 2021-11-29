@@ -40,7 +40,7 @@ def changeBoard_chutes(move):
             previousmove.append(move[4])    # end
             if piece == 'b':
                 boy_location = move[4]
-            elif piece == 'g'
+            elif piece == 'g':
                 girl_location = move[4]
 
         elif move[3] == 'spots':                     # will probababily change this based on how google reads numbers
@@ -51,17 +51,19 @@ def changeBoard_chutes(move):
                     newx =  9 - ((start[0] + num)-10)
                     end = ( newx, start[1] + 1)
                     StrightLine (get_key(start), get_key(end), magnet_location)
+                    previousmove.clear()
                     previousmove.append(get_key(start))    # start
                     previousmove.append(get_key(end))    # end
 
-            elif piece = 'g'
-                start = chutes_mappings_game[boy_location]
+            elif piece == 'g':
+                start = chutes_mappings_game[girl_location]
                 if (start[0] + num) >= 9:
                     newx =  9 - ((start[0] + num)-10)
                     end = ( newx, start[1] + 1)
                     StrightLine (get_key(start), get_key(end), magnet_location)
+                    previousmove.clear()
                     previousmove.append(get_key(start))    # start
-                    previousmove.append(get_key(end))    # end ujn                                     c
+                    previousmove.append(get_key(end))    # end ujn                               
 
     elif move[0] == "spin":
         if move[1] == "the":
@@ -74,8 +76,8 @@ def changeBoard_chutes(move):
             return "invalid command"
     
     elif move[0] == 'start':
-
-    
+        boy_location = '1'        # we will have to do some collision detection
+        girl_location = '2'
 
     elif move[0] == "undo":
         if move[1] == "move":
