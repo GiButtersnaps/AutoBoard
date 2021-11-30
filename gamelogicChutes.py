@@ -3,7 +3,7 @@ import numpy as np
 
 #Deans calculations are crap
 
-chutes_mappings_game = {
+chutes_mappings_game = { '0' : (0, -1),
 '1' : (0,0), '2' : (1,0), '3' : (2,0), '4' : (3,0), '5' : (4,0), '6' : (5,0), '7' : (6,0), '8' : (7,0), '9' : (8,0), '10' : (9,0),
 '20': (0,1), '19': (1,1), '18': (2,1), '17': (3,1), '16': (4,1), '15': (5,1), '14': (6,1), '13': (7,1), '12': (8,1), '11' : (9,1), 
 '21': (0,2), '22': (1,2), '23': (2,2), '24': (3,2), '25': (4,2), '26': (5,2), '27': (6,2), '28': (7,2), '29': (8,2), '30': (9,2), 
@@ -19,12 +19,24 @@ chutes_mappings_game = {
 previousmove = []
 magnet_location = '1'
 boy_location = '1'        # we will have to do some collision detection
-girl_location = '2'
+girl_location = '0'
 
 def get_key(val):
     for key, value in chutes_mappings_game.items():
         if val == value:
             return key
+
+def SameRowCollision(gender, num):
+    if gender == 'b':
+        for i in range(num):
+            if int(boy_location) + i == int(girl_location):
+                return 'collides'
+    elif gender == 'g':
+        for i in range(num):
+            if int(girl_location) + i == int(boy_location):
+                return 'collides'
+    else:
+        return 'no'
 
 def changeBoard_chutes(move):
     if move[0] == 'move':
@@ -34,14 +46,23 @@ def changeBoard_chutes(move):
             piece = 'g'
         
         if move[3] == 'to':
-            StrightLine(move[2],move[4],magnet_location)
+            if piece == 'b':
+                if girl_location == move[4]:
+                    coords = chutes_mappings_game[girl_location]
+                    either = get_key( (coords[0] - 1, coords[1]))
+                elif boy_location == move[4]:
+                    coords = chutes_mappings_game[boy_location]
+                    either = get_key( (coords[0] - 1, coords[1]))
+                else:
+                    either = move[4]
+            StrightLine(move[2],either,magnet_location, 'chutes')
             previousmove.clear()
             previousmove.append(move[2])    # start
             previousmove.append(move[4])    # end
             if piece == 'b':
-                boy_location = move[4]
+                boy_location = either
             elif piece == 'g':
-                girl_location = move[4]
+                girl_location = either
 
         elif move[3] == 'spots':                     # will probababily change this based on how google reads numbers
             num = int(move[2])                       # assuming input string is '5'
@@ -50,20 +71,38 @@ def changeBoard_chutes(move):
                 if (start[0] + num) >= 9:
                     newx =  9 - ((start[0] + num)-10)
                     end = ( newx, start[1] + 1)
-                    StrightLine (get_key(start), get_key(end), magnet_location)
+                    StrightLine (get_key(start), get_key(end), magnet_location, 'chutes')
                     previousmove.clear()
                     previousmove.append(get_key(start))    # start
                     previousmove.append(get_key(end))    # end
+                else:
+                    if SameRowCollision(piece, num) == 'no':
+                        newx = start[0] + num
+                        end = (newx, start[1])
+                        StrightLine (get_key(start), get_key(end), magnet_location, 'chutes')
+                        previousmove.clear()
+                        previousmove.append(get_key(start))    # start
+                        previousmove.append(get_key(end))    # end
+                    elif SameRowCollision(piece, num) == 'collides':
+                        end1 = (start[0], start[1]+1)
+                        StrightLine (get_key(start), get_key(end1), magnet_location, 'chutes')
+                        end2 = (start[0] + num, end1[1])
+                        StrightLine (get_key(end1), get_key(end2), magnet_location, 'chutes')
+                        end3 = (end2[0], start[1])
+                        StrightLine (get_key(end2), get_key(end3), magnet_location, 'chutes')
 
             elif piece == 'g':
                 start = chutes_mappings_game[girl_location]
                 if (start[0] + num) >= 9:
                     newx =  9 - ((start[0] + num)-10)
                     end = ( newx, start[1] + 1)
-                    StrightLine (get_key(start), get_key(end), magnet_location)
-                    previousmove.clear()
-                    previousmove.append(get_key(start))    # start
-                    previousmove.append(get_key(end))    # end ujn                               
+                else:
+                    newx = start[0] + num
+                    end = (newx, start[1])
+                StrightLine (get_key(start), get_key(end), magnet_location, 'chutes')
+                previousmove.clear()
+                previousmove.append(get_key(start))    # start
+                previousmove.append(get_key(end))    # end                              
 
     elif move[0] == "spin":
         if move[1] == "the":
@@ -77,12 +116,12 @@ def changeBoard_chutes(move):
     
     elif move[0] == 'start':
         boy_location = '1'        # we will have to do some collision detection
-        girl_location = '2'
+        girl_location = '0'
 
     elif move[0] == "undo":
         if move[1] == "move":
             if len(previousmove) ==2:
-                StrightLine(previousmove[1], previousmove[0], magnet_location)
+                StrightLine(previousmove[1], previousmove[0], magnet_location, 'chutes')
         else:
             return "invalid command"
 

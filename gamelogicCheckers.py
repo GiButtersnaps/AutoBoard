@@ -3,16 +3,16 @@ from MotorLogic import StrightLine
 import numpy as np
 
 checkers_mappings_game = {   # I for Inferior(Lower) edge of board,  U for upper edge of board, R for right side of baord, L for left side of board
-                    'A0' :(0, -1), 'B0' :(1, -1), 'C0' :(2, -1), 'D0' :(3, -1), 'E0' :(4, -1), 'F0' :(5, -1), 'G0' :(6, -1), 'H0' :(7, -1), 
-    'L1' : (-1,0), 'A1' : (0, 0), 'B1' : (1,0), 'C1' : (2,0), 'D1' : (3,0), 'E1' : (4, 0), 'F1' : (5, 0), 'G1' : (6, 0), 'H1' : (7,0), 'R1' : (8,0),
-    'L2' : (-1,1), 'A2' : (0, 1), 'B2' : (1,1), 'C2' : (2,1), 'D2' : (3,1), 'E2' : (4, 1), 'F2' : (5, 1), 'G2' : (6, 1), 'H2' : (7,1), 'R2' : (8,1),
-    'L3' : (-1,2), 'A3' : (0, 2), 'B3' : (1,2), 'C3' : (2,2), 'D3' : (3,2), 'E3' : (4, 2), 'F3' : (5, 2), 'G3' : (6, 2), 'H3' : (7,2), 'R3' : (8,2),
-    'L4' : (-1,3), 'A4' : (0, 3), 'B4' : (1,3), 'C4' : (2,3), 'D4' : (3,3), 'E4' : (4, 3), 'F4' : (5, 3), 'G4' : (6, 3), 'H4' : (7,3), 'R4' : (8,3),
-    'L5' : (-1,4), 'A5' : (0, 4), 'B5' : (1,4), 'C5' : (2,4), 'D5' : (3,4), 'E5' : (4, 4), 'F5' : (5, 4), 'G5' : (6, 4), 'H5' : (7,4), 'R5' : (8,4),
-    'L6' : (-1,5), 'A6' : (0, 5), 'B6' : (1,5), 'C6' : (2,5), 'D6' : (3,5), 'E6' : (4, 5), 'F6' : (5, 5), 'G6' : (6, 5), 'H6' : (7,5), 'R6' : (8,5),
-    'L7' : (-1,6), 'A7' : (0, 6), 'B7' : (1,6), 'C7' : (2,6), 'D7' : (3,6), 'E7' : (4, 6), 'F7' : (5, 6), 'G7' : (6, 6), 'H7' : (7,6), 'R7' : (8,6),
-    'L8' : (-1,7), 'A8' : (0, 7), 'B8' : (1,7), 'C8' : (2,7), 'D8' : (3,7), 'E8' : (4, 7), 'F8' : (5, 7), 'G8' : (6, 7), 'H8' : (7,7), 'R8' : (8,7),
-                    'A9' : (0, 8), 'B9' : (1,8), 'C9' : (2,8), 'D9' : (3,8), 'E9' : (4, 8), 'F9' : (5, 8), 'G9' : (6, 8), 'H9' : (7,8)
+'A0' :(0, -1), 'B0' :(1, -1), 'C0' :(2, -1), 'D0' :(3, -1), 'E0' :(4, -1), 'F0' :(5, -1), 'G0' :(6, -1), 'H0' :(7, -1), 
+'A1' : (0, 0), 'B1' : (1,0), 'C1' : (2,0), 'D1' : (3,0), 'E1' : (4, 0), 'F1' : (5, 0), 'G1' : (6, 0), 'H1' : (7,0), 
+'A2' : (0, 1), 'B2' : (1,1), 'C2' : (2,1), 'D2' : (3,1), 'E2' : (4, 1), 'F2' : (5, 1), 'G2' : (6, 1), 'H2' : (7,1), 
+'A3' : (0, 2), 'B3' : (1,2), 'C3' : (2,2), 'D3' : (3,2), 'E3' : (4, 2), 'F3' : (5, 2), 'G3' : (6, 2), 'H3' : (7,2), 
+'A4' : (0, 3), 'B4' : (1,3), 'C4' : (2,3), 'D4' : (3,3), 'E4' : (4, 3), 'F4' : (5, 3), 'G4' : (6, 3), 'H4' : (7,3), 
+'A5' : (0, 4), 'B5' : (1,4), 'C5' : (2,4), 'D5' : (3,4), 'E5' : (4, 4), 'F5' : (5, 4), 'G5' : (6, 4), 'H5' : (7,4), 
+'A6' : (0, 5), 'B6' : (1,5), 'C6' : (2,5), 'D6' : (3,5), 'E6' : (4, 5), 'F6' : (5, 5), 'G6' : (6, 5), 'H6' : (7,5), 
+'A7' : (0, 6), 'B7' : (1,6), 'C7' : (2,6), 'D7' : (3,6), 'E7' : (4, 6), 'F7' : (5, 6), 'G7' : (6, 6), 'H7' : (7,6), 
+'A8' : (0, 7), 'B8' : (1,7), 'C8' : (2,7), 'D8' : (3,7), 'E8' : (4, 7), 'F8' : (5, 7), 'G8' : (6, 7), 'H8' : (7,7), 
+'A9' : (0, 8), 'B9' : (1,8), 'C9' : (2,8), 'D9' : (3,8), 'E9' : (4, 8), 'F9' : (5, 8), 'G9' : (6, 8), 'H9' : (7,8)
 }
 
 boardlayout_start = [[' ', 'x', ' ', 'x', ' ', 'x', ' ', 'x'],
@@ -124,7 +124,7 @@ def changeBoard_checkers(move):
                 if boardlayout_current[end[0]][end[1]] == ' ':
                     #make move, update current location, update board 
                     #we want 'A1' not (0,0)
-                    StrightLine(move[2], move[4], magnet_location)
+                    StrightLine(move[2], move[4], magnet_location, 'checkers')
 
                     magnet_location = end
                     boardlayout_current[start[0]][start[1]] = ' '
@@ -143,9 +143,9 @@ def changeBoard_checkers(move):
                 if boardlayout[end[0]][end[1]] == ' ':
                     where = findInbetween(start, end)
                     OffBoard = findpathstright(where)
-                    #Where gonna hav to fix this . stright line to offboard wont work if other peices are in way
-                    StrightLine(get_key(where),  get_key(OffBoard), magnet_location) #check this kevin
-                    StrightLine(move[2], move[4], get_key(OffBoard))  
+
+                    StrightLine(get_key(where),  get_key(OffBoard), magnet_location, 'checkers') #check this kevin
+                    StrightLine(move[2], move[4], get_key(OffBoard), 'checkers')  
                     
                     magnet_location = end
                     boardlayout_current[start[0]][start[1]] = ' '
@@ -170,10 +170,10 @@ def changeBoard_checkers(move):
     elif move[0] == "undo":
         if move[1] == "move":
             if len(previousmove) == 4:
-                StrightLine( previousmove[3], previousmove[2], magnet_location)
-                StrightLine( previousmove[1], previousmove[0], magnet_location)
+                StrightLine( previousmove[3], previousmove[2], magnet_location, 'checkers')
+                StrightLine( previousmove[1], previousmove[0], magnet_location, 'checkers')
             elif len(previousmove) ==2:
-                StrightLine(previousmove[1], previousmove[0], magnet_location)
+                StrightLine(previousmove[1], previousmove[0], magnet_location, 'checkers')
         else:
             return "invalid command"
 
