@@ -9,7 +9,7 @@ commandDictionary  = {}
 
 #function to call when the game is chosen
 # takes a list of valid commands for that game and makes a dictionary with each word used in all of the commands
-def makeDictionary(commands):
+def makeDictionary():
     for command in commands:
         words = command.split()
         for word in words:
